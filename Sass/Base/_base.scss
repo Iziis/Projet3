@@ -1,0 +1,31 @@
+@font-face {
+
+    font-family: 'roboto';
+    src: url(./Polices/roboto-light-webfont.eot) format('eot'),
+    url(./Polices/roboto-light-webfont.woff) format('woff'),
+    url(./Polices/roboto-light-webfont.ttf) format('truetype'),
+    url(./Polices/roboto-light-webfont.svg) format('svg');
+}
+
+@font-face {
+
+    font-family:'shrikhand';
+    src: url(./Polices/shrikhand-v6-latin-regular.eot) format('eot'),
+    url(./Polices/shrikhand-v6-latin-regular.woff) format('woff'),
+    url(./Polices/shrikhand-v6-latin-regular.ttf) format('truetype'),
+    url(./Polices/shrikhand-v6-latin-regular.svg) format('svg');
+}
+
+body {
+    margin: 0;
+    font-family: "roboto";
+}
+
+a {
+    text-decoration:none;
+    color: inherit;
+}
+
+* {
+    box-sizing: border-box;
+}

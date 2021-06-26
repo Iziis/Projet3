@@ -1,0 +1,51 @@
+.header {
+
+    &__top {
+
+        display:flex;
+        justify-content:center;
+        /*box-shadow: 0 0 0.5rem rgb(0 0 0 / 50%);*/
+
+        &__logo {
+            padding:2rem;
+        }
+    }
+}
+
+.footer {
+
+    text-align: center;
+    background-color: #353535;
+    color:white;
+
+    @include mobile-only {
+        text-align:left;
+        }
+
+    &__titre {
+        padding-top:1rem;
+        font-family:"shrikhand";
+        margin: 0;
+
+        @include mobile-only {
+            padding:1rem 1.5rem 0 1.5rem;
+            }
+    }
+
+    &__liens {
+
+        display:flex;
+        justify-content:space-around;
+        padding: 1.5rem;
+
+        @include mobile-only {
+            flex-direction: column;
+            padding: 1rem 1.5rem;
+            line-height: 2rem;
+            }
+    }
+
+    &__liens a > i {
+        padding-right:1rem;
+    }
+}
