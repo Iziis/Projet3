@@ -1,0 +1,24 @@
+{
+  "name": "projet3",
+  "version": "1.0.0",
+  "description": "projet 3 OpenClassrooms",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./style.css"
+  },
+  "author": "Iscia Lefebvre",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Iziis/Projet3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Iziis/Projet3/issues"
+  },
+  "homepage": "https://github.com/Iziis/Projet3#readme",
+  "keywords": [
+    "\"food",
+    "\"ohmyfood\"",
+    "\"restaurants\""
+  ]
+}
