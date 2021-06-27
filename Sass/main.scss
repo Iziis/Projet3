@@ -36,10 +36,6 @@
   position: relative;
   bottom: 3.5rem;
 
-  @include mobile-only {
-    width:100%
-    }
-
     &__header {
 
         display:flex;
@@ -64,7 +60,7 @@
 
             @include mobile-only {
                 margin: 1rem 0;
-                }
+            }
         }
     }
 
@@ -84,11 +80,16 @@
 
     }
 
-  }
+}
 
 .content {
 
     padding:0 2rem;
+
+    @include mobile-only {
+        overflow: hidden; /* super important sinon menus sortent de la page */
+        padding:0 1rem;
+    }
 
     @include tablette-only {
         padding:0 8rem;
@@ -96,6 +97,7 @@
 
 
     &__title {
+
         padding: 1rem;
         position:relative;
 
@@ -115,6 +117,7 @@
     }
 
     &__texte {
+
         display:flex;
         background-color: #fff;
         border-radius: 1rem;
@@ -124,21 +127,30 @@
 
         &__txt {
 
+            width: 90%; /* super important pour overflow */
+
             &__subtitle {
                 margin:0;
             }
 
             &__description {
                 margin:0.5rem 0;
+             
+                @include mobile-only {
+    
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
             }
         }
 
         &__price {
             font-weight: bold;
-        }
+            margin-top: 2rem;
+        }       
     }
 }
-
 
 .bouton {  /* obligé de faire une div pour pouvoir flex donc pas de modificateur */
     display:flex;
