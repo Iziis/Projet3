@@ -283,6 +283,7 @@ a {
   color: white;
   box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+  width: 10rem;
 }
 
 .header__image__img {
@@ -308,11 +309,6 @@ a {
   border-radius: 4rem 4rem 0 0;
   position: relative;
   bottom: 3.5rem;
-}
-@media screen and (max-width: 599px) {
-  .cartes {
-    width: 100%;
-  }
 }
 .cartes__header {
   display: flex;
@@ -357,6 +353,13 @@ a {
 .content {
   padding: 0 2rem;
 }
+@media screen and (max-width: 599px) {
+  .content {
+    overflow: hidden;
+    /* super important sinon menus sortent de la page */
+    padding: 0 1rem;
+  }
+}
 @media screen and (min-width: 600px) and (max-width: 1024px) {
   .content {
     padding: 0 8rem;
@@ -388,14 +391,26 @@ a {
   padding: 1rem;
   justify-content: space-between;
 }
+.content__texte__txt {
+  width: 90%;
+  /* super important pour overflow */
+}
 .content__texte__txt__subtitle {
   margin: 0;
 }
 .content__texte__txt__description {
   margin: 0.5rem 0;
 }
+@media screen and (max-width: 599px) {
+  .content__texte__txt__description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
 .content__texte__price {
   font-weight: bold;
+  margin-top: 2rem;
 }
 
 .bouton {
