@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "roboto";
   src: url(./Polices/roboto-light-webfont.eot) format("eot"), url(./Polices/roboto-light-webfont.woff) format("woff"), url(./Polices/roboto-light-webfont.ttf) format("truetype"), url(./Polices/roboto-light-webfont.svg) format("svg");
@@ -6,9 +7,12 @@
   font-family: "shrikhand";
   src: url(./Polices/shrikhand-v6-latin-regular.eot) format("eot"), url(./Polices/shrikhand-v6-latin-regular.woff) format("woff"), url(./Polices/shrikhand-v6-latin-regular.ttf) format("truetype"), url(./Polices/shrikhand-v6-latin-regular.svg) format("svg");
 }
-body {
+.body {
   margin: 0;
   font-family: "roboto";
+}
+.body--grey {
+  background-color: #f6f6f6;
 }
 
 a {
@@ -20,10 +24,26 @@ a {
   box-sizing: border-box;
 }
 
+.header--white {
+  background-color: #fff;
+}
 .header__top {
   display: flex;
   justify-content: center;
+  position: relative;
+  /* utile pour la fleche sur les pages menu */
   /*box-shadow: 0 0 0.5rem rgb(0 0 0 / 50%);*/
+}
+.header__top i {
+  position: absolute;
+  top: 2.5rem;
+  left: 10rem;
+  font-size: 1.2rem;
+}
+@media screen and (max-width: 599px) {
+  .header__top i {
+    left: 2rem;
+  }
 }
 .header__top__logo {
   padding: 2rem;
@@ -65,6 +85,9 @@ a {
   padding-right: 1rem;
 }
 
+.header {
+  position: relative;
+}
 .header__bottom {
   text-align: center;
   background-color: #f3f3f3;
@@ -260,6 +283,126 @@ a {
   color: white;
   box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+}
+
+.header__image__img {
+  height: 30rem;
+  /* avant 19 */
+  width: 100%;
+  object-fit: cover;
+}
+@media screen and (max-width: 599px) {
+  .header__image__img {
+    height: 15rem;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .header__image__img {
+    height: 20rem;
+  }
+}
+
+.cartes {
+  background-color: #f6f6f6;
+  /* peut être mixin ici vu que cest pareil sur pages et accueil */
+  border-radius: 4rem 4rem 0 0;
+  position: relative;
+  bottom: 3.5rem;
+}
+@media screen and (max-width: 599px) {
+  .cartes {
+    width: 100%;
+  }
+}
+.cartes__header {
+  display: flex;
+  font-family: "shrikhand";
+  justify-content: space-around;
+  font-size: 2rem;
+}
+@media screen and (max-width: 599px) {
+  .cartes__header {
+    font-size: 1.5rem;
+    justify-content: space-evenly;
+  }
+}
+.cartes__header i {
+  margin-top: 3rem;
+}
+@media screen and (max-width: 599px) {
+  .cartes__header i {
+    margin: 1.6rem 0 0 0;
+  }
+}
+@media screen and (max-width: 599px) {
+  .cartes__header__title {
+    margin: 1rem 0;
+  }
+}
+.cartes__contents {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media screen and (max-width: 599px) {
+  .cartes__contents {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .cartes__contents {
+    grid-template-columns: 1fr;
+  }
+}
+
+.content {
+  padding: 0 2rem;
+}
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .content {
+    padding: 0 8rem;
+  }
+}
+.content__title {
+  padding: 1rem;
+  position: relative;
+}
+@media screen and (max-width: 599px) {
+  .content__title {
+    margin: 0;
+  }
+}
+.content__title::after {
+  content: "";
+  width: 3rem;
+  height: 0.25rem;
+  background-color: #99e2d0;
+  position: absolute;
+  left: 1rem;
+  top: 3rem;
+}
+.content__texte {
+  display: flex;
+  background-color: #fff;
+  border-radius: 1rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  justify-content: space-between;
+}
+.content__texte__txt__subtitle {
+  margin: 0;
+}
+.content__texte__txt__description {
+  margin: 0.5rem 0;
+}
+.content__texte__price {
+  font-weight: bold;
+}
+
+.bouton {
+  /* obligé de faire une div pour pouvoir flex donc pas de modificateur */
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */
