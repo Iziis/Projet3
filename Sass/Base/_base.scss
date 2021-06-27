@@ -16,9 +16,13 @@
     url(./Polices/shrikhand-v6-latin-regular.svg) format('svg');
 }
 
-body {
+.body {
     margin: 0;
     font-family: "roboto";
+
+    &--grey {
+    background-color: #f6f6f6;
+    }
 }
 
 a {

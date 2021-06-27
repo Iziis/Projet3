@@ -1,10 +1,26 @@
 .header {
 
+    &--white {
+        background-color:#fff;
+    }
+
     &__top {
 
         display:flex;
         justify-content:center;
+        position:relative; /* utile pour la fleche sur les pages menu */
         /*box-shadow: 0 0 0.5rem rgb(0 0 0 / 50%);*/
+
+        i {
+            position: absolute;
+            top: 2.5rem;
+            left: 10rem;
+            font-size: 1.2rem;
+
+            @include mobile-only {
+            left:2rem;
+            }
+        }
 
         &__logo {
             padding:2rem;
