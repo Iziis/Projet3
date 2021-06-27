@@ -1,0 +1,146 @@
+.header__image {
+
+    &__img {
+
+        height: 30rem; /* avant 19 */
+        width: 100%;
+        object-fit: cover;
+
+        @include mobile-only {
+            height:15rem;
+        }
+
+        @include tablette-only {
+            height:20rem;
+        }
+    }
+}
+
+.cartes {
+
+  background-color: #f6f6f6; /* peut être mixin ici vu que cest pareil sur pages et accueil */
+  border-radius: 4rem 4rem 0 0;
+  position: relative;
+  bottom: 3.5rem;
+
+    &__header {
+
+        display:flex;
+        font-family:"shrikhand";
+        justify-content: space-around;
+        font-size: 2rem;
+
+        @include mobile-only {
+            font-size:1.5rem;
+            justify-content: space-evenly;
+            }
+
+        i {
+            margin-top:3rem;
+
+            @include mobile-only {
+                margin: 1.6rem 0 0 0;
+                }
+        }
+
+        &__title {
+
+            @include mobile-only {
+                margin: 1rem 0;
+            }
+        }
+    }
+
+    &__contents {
+
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        @include mobile-only {
+            grid-template-columns: 1fr;
+        }
+
+
+        @include tablette-only {
+            grid-template-columns: 1fr;
+        }
+
+    }
+
+}
+
+.content {
+
+    padding:0 2rem;
+
+    @include mobile-only {
+        overflow: hidden; /* super important sinon menus sortent de la page */
+        padding:0 1rem;
+    }
+
+    @include tablette-only {
+        padding:0 8rem;
+    }
+
+
+    &__title {
+
+        padding: 1rem;
+        position:relative;
+
+        @include mobile-only {
+            margin:0;
+            }
+
+        &::after{
+            content: "";
+            width: 3rem;
+            height: .25rem;
+            background-color: #99e2d0;
+            position: absolute;
+            left: 1rem;
+            top: 3rem;
+        }
+    }
+
+    &__texte {
+
+        display:flex;
+        background-color: #fff;
+        border-radius: 1rem;
+        margin: 1rem 0;
+        padding: 1rem;
+        justify-content: space-between;
+
+        &__txt {
+
+            width: 90%; /* super important pour overflow */
+
+            &__subtitle {
+                margin:0;
+            }
+
+            &__description {
+                margin:0.5rem 0;
+             
+                @include mobile-only {
+    
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            }
+        }
+
+        &__price {
+            font-weight: bold;
+            margin-top: 2rem;
+        }       
+    }
+}
+
+.bouton {  /* obligé de faire une div pour pouvoir flex donc pas de modificateur */
+    display:flex;
+    justify-content:center;
+    margin-top: 2rem;
+}
