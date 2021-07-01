@@ -11,3 +11,69 @@
 @import "./Pages/menus";
 
 @import "./Composants/components.scss";
+
+.loader {
+    
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.90);
+    animation: loader 0.01s;
+    animation-delay: 1.75s;
+    animation-fill-mode: both; /* très important */
+    z-index: 10000; /* très important */
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    &__item {
+    
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid $color-primary;
+        border-right: 16px solid $color-secondary;
+        border-bottom: 16px solid $color-tertiary;
+        width: 100px;
+        height: 100px;
+        -webkit-animation: spin 2s linear infinite;
+        animation: spin 2s linear infinite; 
+    }
+
+}
+
+  @keyframes loader {
+    100% {
+      opacity: 0;
+      z-index: -10;
+    }
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @keyframes item_appear {
+  
+  0% {transform: scale(0);}
+  100% {transform: scale(1);}
+
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -26,21 +26,20 @@
     &__header {
 
         display:flex;
+        justify-content: space-between;
+        align-items:center;
         font-family:"shrikhand";
-        justify-content: space-around;
         font-size: 2rem;
+        padding: 0 3rem;
+
+        @include tablette-only {
+            justify-content:space-evenly ;
+        }
 
         @include mobile-only {
-            font-size:1.5rem;
+            font-size:1.4rem;
             justify-content: space-evenly;
-            }
-
-        i {
-            margin-top:3rem;
-
-            @include mobile-only {
-                margin: 1.6rem 0 0 0;
-                }
+            padding:0;
         }
 
         &__title {
@@ -49,7 +48,41 @@
                 margin: 1rem 0;
             }
         }
+
+        &__like {
+
+            font-size: 1.75rem;
+            height:28px;
+            width:28px;
+
+            @include mobile-only {
+                font-size:1.4rem;
+                width:24px;
+            }
+    
+            &__full {
+    
+                opacity:0;
+                width: 28px;
+                position:absolute;
+                transition: 400ms ease-in-out;
+                z-index: 2;
+                color:$color-primary;
+    
+                &:hover{
+                    opacity:1;
+                }
+            }
+    
+            &__empty {
+                opacity:1;
+                width: 28px;
+                position:absolute;
+            }
+        }
     }
+
+   
 
     &__contents {
 
@@ -102,42 +135,111 @@
             top: 3rem;
         }
     }
+}
 
-    &__texte {
+.carte {
 
-        display:flex;
-        background-color: #fff;
-        border-radius: 1rem;
-        margin: 1rem 0;
-        padding: 1rem;
-        justify-content: space-between;
+    display:flex;
+    background-color: #fff;
+    border-radius: 1rem;
+    margin: 1rem 0;
+    box-shadow: 0px 10px 14px -6px rgba(121, 121, 121, 0.5);
+    overflow: hidden;
+    cursor: pointer;
 
-        &__txt {
+    animation: item_appear .7s;
+    animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
+    animation-fill-mode: both;
+    transform: scale(0);
 
-            width: 90%; /* super important pour overflow */
+    &__container {
 
-            &__subtitle {
-                margin:0;
-            }
+        /* width: 90%; super important pour overflow */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        flex: 1;
+        padding: 1rem 1rem 0 1rem;
 
-            &__description {
-                margin:0.5rem 0;
-             
-                @include mobile-only {
-    
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
-                }
-            }
+        &__subtitle {
+
+            margin: 0;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
         }
 
-        &__price {
-            font-weight: bold;
-            margin-top: 2rem;
-        }       
+        &__description {
+
+            margin:0;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+
+            &__txt {
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+
+            &__price {
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+      
+    &__confirm {
+
+        background-color: $color-tertiary;
+        margin: 0 -5rem -1rem 1rem;
+        width: 4rem;
+        height: 5.75rem;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        transition-duration: 0.5s;
+        border-radius: 0 1rem 1rem 0;
+
+        opacity:0;
+
+        &__wrap {
+
+            height: 1.6rem;
+            width: 1.6rem;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 100px;
+            transform: rotate(180deg);
+            transition-duration: .5s;
+        }
+
+        &__icon {
+            color: $color-tertiary;
+        }
+    }
+
+    &:hover &__confirm {
+        margin-right: -0.25rem;
+        opacity:1;
+    }
+
+    &:hover &__confirm__wrap {
+        transform:rotate(0);
     }
 }
+
+@for $i from 1 to 11 {
+    .carte--#{$i} {
+      animation-delay:  #{$i/11}s;
+    }
+  }
+  
 
 .bouton {  /* obligé de faire une div pour pouvoir flex donc pas de modificateur */
     display:flex;
